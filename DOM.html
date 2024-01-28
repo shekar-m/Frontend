@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #s1
+        {
+            color: blue;
+            background-color: darkred;
+        }
+        #joe
+        {
+            width: 500px;
+            height: 200px;
+            border: 1px solid blue ;
+            background-color:yellowgreen;
+        }
+        .curser
+        {
+            cursor:crosshair;
+        }
+    </style>
+</head>
+<body>
+    <h1 id=dodgerid></h1>
+    <input id = "22" type="button" value="shekar" onclick="myfun1()">  
+    <h2 id="23"></h2>
+    <h1 id="09">HELLO CHANGES</h1>
+    <button onclick="h1bcchange()" >create attribute</button><br><br>
+    <a id="anchors" ondblclick="attributechange()">go to w3 schools webiste of javascript dom</a>
+    <div class="e1">
+        <p>hello1</p>
+    </div>
+    <div class="e1 e2">
+        <p>hello1</p>
+    </div>
+    <div class="e1 e2">
+        <p>hello1</p>
+    </div>
+    <p id="ss">hello css id selector</p>
+    <p class="ss">hello css class selector</p>
+
+    <p class="egclass">hello css class selector</p>
+    <p class="egclass">hello css class selector</p>
+    <p class="curser">hello for types of curser</p>
+    <button onclick="myfunqueryselector()">hit me for queryselector</button>  
+    <button onclick="myfunqueryselectorall()">hit me for queryselectorall</button>
+    <div id="joe" onmousemove="fmousemove(event)" onmouseout="fmouseout()"></div>
+    <p id="989"></p>
+    <p id="801"></p>
+    <p id="802"></p>
+    <p id="803"></p>
+    <p id="804"></p>
+    <p id="805"></p>
+    <p id="806"></p>
+    
+    <div id="807">
+
+    </div>
+    <p id="909"></p>
+</body>
+<script>
+    function  promptbox()
+    {
+        let person=prompt("please enter your name","shekar mayakala");
+        let  text="";
+        if(person==null || person=="")
+        {
+            text="cancelled by the user";
+            document.getElementById("909").innerHTML=text;
+        }
+        else
+        {
+            text="hello"+person+"how r u";
+            document.getElementById("909").innerHTML=text;
+        }
+        
+
+    }
+    promptbox();
+
+   
+
+    function onfflineimage()
+    {
+        if (window.navigator.onLine) 
+        {
+            d.innerHTML = '<iframe id="iframe" src="https://maps.google.it/maps?q=Inprint Printers,25+Watermeyer+st,eMalahleni,Mpumalanga,1035&output=embed" allowfullscreen></iframe>';
+        } 
+        else 
+        {
+            d.innerHTML = '<img scr="https://upload.wikimedia.org/wikipedia/commons/2/23/User-Chaza93-Offline.png">';
+        }
+    }
+    
+    function allproperties()
+    {
+        document.getElementById("801").innerHTML="appversion   property ==>"+navigator.appVersion;
+        document.getElementById("802").innerHTML="useragent property ==>"+navigator.userAgent;
+        document.getElementById("803").innerHTML="platform property ==>"+navigator.platform;
+        document.getElementById("804").innerHTML="languages property ==>"+navigator.languages;
+        document.getElementById("805").innerHTML="onLine property ==>"+navigator.onLine;
+        document.getElementById("806").innerHTML="product property ==>"+navigator.product;
+        if(navigator.onLine)
+        {
+            document.innerHTML='working fine accroding to understanding';
+        }
+        else
+        {
+            document.innerHTML='<img scr="bulbs.webp">';
+        }
+        
+    }
+    allproperties();
+    function fmousemove(e)  
+    {
+        let p=e.clientX;
+        let q=e.clientY;
+        document.getElementById("989").innerHTML=p +"   "+q;        
+    }
+    function fmouseout()
+    {    
+        let c=0;  
+        document.getElementById("989").innerHTML=c+1;
+    }
+    function myfunqueryselectorall()
+    {
+        let step1=document.querySelectorAll(".egclass");
+        for(let i=0;i<step1.length;i++)
+        {
+            step1[i].style.backgroundColor="blue"; 
+        }
+    }
+    function myfunqueryselector()
+    {
+        let step1=document.querySelector("#ss").style.backgroundColor="red";
+        let step2=document.querySelector(".ss").style.backgroundColor="pink";
+        //let step3=document.querySelector("p").style.fontSize="voilet";
+    }
+    function myfungetelementbyclassname()
+    {
+        let step1=document.getElementsByClassName("e1");
+        step1[2].style.color="yellow"
+    }
+    myfungetelementbyclassname()
+    function attributechange()
+    {
+        let step1=document.createAttribute("href");
+        step1.value="https://www.w3schools.com/js/js_htmldom_methods.asp";
+        document.getElementById("anchors").setAttributeNode(step1);
+    }
+
+    function h1bcchange()    
+    {
+        const att1=document.createAttribute("id");
+        att1.value="s1";
+        document.getElementById("09").setAttributeNode(att1);
+    }
+
+    function myfun1()
+    {
+        let a=Array.from(document.getElementById("22").value);
+        let evenindexvalue=a.filter((x,i)=>i%2!=0);
+        document.getElementById("23").innerHTML=evenindexvalue;
+    }
+
+    //document.getElementById("23").innerHTML=a;
+</script>
+</html>
